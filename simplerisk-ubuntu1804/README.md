@@ -16,4 +16,3 @@
 
 - Simplerisk: `docker build -t simplerisk-www:latest ./simplerisk`
 - Database: `docker build -t simplerisk-db:latest ./database`
-- phpMyAdmin doesn't need building but you can fetch the image locally using `docker pull phpmyadmin/phpmyadmin:4.8`
