@@ -6,6 +6,8 @@ LABEL maintainer="Simplerisk <support@simplerisk.com>"
 
 WORKDIR /var/www
 
+ENV VERSION=20201005-001
+
 # Installing apt dependencies
 RUN apt-get update && \
     apt-get -y dist-upgrade && \
@@ -60,7 +62,6 @@ RUN sed -i 's/#ServerSignature On/ServerSignature Off/g' /etc/apache2/conf-enabl
 
 # Download and extract SimpleRisk, plus saving version for database reference
 RUN rm -rf /var/www/html && \
-    VERSION=`curl -sL https://updates.simplerisk.com/Current_Version.xml | grep -oP '<appversion>(.*)</appversion>' | cut -d '>' -f 2 | cut -d '<' -f 1` && \
     curl -sL https://github.com/simplerisk/bundles/raw/master/simplerisk-$VERSION.tgz | tar xz -C /var/www && \
     echo $VERSION > /tmp/version
 
