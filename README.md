@@ -3,8 +3,8 @@
 These images are available on [DockerHub](https://hub.docker.com/u/simplerisk).
 
 Overview:
-- `simplerisk`: Contains all necessary components to make a SimpleRisk instance work (LAMP stack and mail utilities).
-- `simplerisk-minimal`: Only packs components for the SimpleRisk application. You will need to connect it with an external database.
+- [`simplerisk`](https://github.com/wolfangaukang/docker/tree/master/simplerisk): Contains all necessary components to make a SimpleRisk instance work (LAMP stack and mail utilities).
+- [`simplerisk-minimal`](https://github.com/wolfangaukang/docker/tree/master/simplerisk-minimal): Only packs components for the SimpleRisk application. You will need to connect it with an external database.
 
 ## Build
 
