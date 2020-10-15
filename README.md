@@ -2,7 +2,7 @@
 
 These images are available on [DockerHub](https://hub.docker.com/u/simplerisk).
 
-Overview of images:
+Overview:
 - `simplerisk`: Contains all necessary components to make a SimpleRisk instance work (LAMP stack and mail utilities).
 - `simplerisk-minimal`: Only packs components for the SimpleRisk application. You will need to connect it with an external database.
 
@@ -12,13 +12,6 @@ Overview of images:
 - Run the build command (`docker build -t simplerisk/simplerisk /path/to/dockerfile/directory`)
 
 Works with Podman.
-
-## Run
-
-To run the container in standalone mode (recommended for the `simplerisk` image), execute the command:
-```
-docker run --name simplerisk -d -p 80:80 -p 443:443 simplerisk
-```
 
 ## Using Docker Compose/Swarm
 
