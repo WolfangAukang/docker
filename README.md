@@ -10,20 +10,21 @@ Overview of images:
 
 - Clone the repository (`git clone https://github.com/simplerisk/docker`)
 - Run the build command (`docker build -t simplerisk/simplerisk /path/to/dockerfile/directory`)
-(Works with Podman)
+
+Works with Podman.
 
 ## Run
 
-To run the container, execute the command:
+To run the container in standalone mode (recommended for the `simplerisk` image), execute the command:
 ```
 docker run --name simplerisk -d -p 80:80 -p 443:443 simplerisk
 ```
 
-## Using Docker Compose
+## Using Docker Compose/Swarm
 
-A `docker-compose.yml` file is provided for a stack deployment of the application. It will deploy the application with the following components:
+A `docker-compose.yml` file is provided for a stack deployment of the application on Compose, while `docker-swarm.yml` is for Docker Swarm. It will deploy the application with the following components:
 - SimpleRisk application (`simplerisk-minimal`)
 - MariaDB Database (version 10.3)
 - Namshi SMTP Server
 
-[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/WolfangAukang/docker/SWARM/docker-stack.yml)
+[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/WolfangAukang/docker/master/docker-stack.yml)
