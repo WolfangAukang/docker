@@ -22,9 +22,11 @@ docker run --name simplerisk -d -p 80:80 -p 443:443 simplerisk
 
 ## Using Docker Compose/Swarm
 
-A `docker-compose.yml` file is provided for a stack deployment of the application on Compose, while `docker-swarm.yml` is for Docker Swarm. It will deploy the application with the following components:
-- SimpleRisk application (`simplerisk-minimal`)
-- MariaDB Database (version 10.3)
-- Namshi SMTP Server
+A `docker-compose.yml` file is provided for a stack deployment of the application on Docker Compose, while `docker-stack.yml` is for Docker Swarm. It will deploy the application with the following components:
+- [SimpleRisk Application](https://hub.docker.com/r/wolfangaukang/simplerisk-minimal) (`simplerisk-minimal`)
+- [MariaDB Database](https://hub.docker.com/_/mariadb) (version 10.4)
+- [SMTP Server](https://hub.docker.com/r/namshi/smtp)
+
+Change its settings according to your needs.
 
 [![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/WolfangAukang/docker/master/docker-stack.yml)
