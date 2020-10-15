@@ -25,3 +25,5 @@ A `docker-compose.yml` file is provided for a stack deployment of the applicatio
 - SimpleRisk application (`simplerisk-minimal`)
 - MariaDB Database (version 10.3)
 - Namshi SMTP Server
+
+[![Try in PWD](https://raw.githubusercontent.com/play-with-docker/stacks/master/assets/images/button.png)](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/WolfangAukang/docker/SWARM/docker-stack.yml)
