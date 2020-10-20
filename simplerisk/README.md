@@ -23,7 +23,7 @@ SimpleRisk – Transforming Risk Management. Simple. Effective. Affordable.
 To build this image, run the following commands:
 
 ```
-# From the root directory 
+# From the root directory of the repository
 cd simplerisk
 VERSION=ubuntu-version # Currently supports Trusty and Bionic
 podman build -t simplerisk/simplerisk $VERSION 

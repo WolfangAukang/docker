@@ -9,7 +9,7 @@ It uses PHP 7.X with Apache as a base image. Also has the capability of setting 
 To build this image, run the following commands:
 
 ```
-# From the root directory 
+# From the root directory of the repository
 cd simplerisk-minimal
 VERSION=7.X
 docker build -f php$VERSION/Dockerfile -t simplerisk/simplerisk-minimal:$VERSION .
