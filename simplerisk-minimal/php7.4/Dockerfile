@@ -33,12 +33,12 @@ RUN setcap CAP_NET_BIND_SERVICE=+eip /usr/sbin/apache2 && \
     rm -rf /var/lib/apt/lists/*
 
 # Copying all files
-COPY ../common/supervisord.conf /etc/supervisord.conf
-COPY ../common/foreground.sh /etc/apache2/foreground.sh
-COPY ../common/envvars /etc/apache2/envvars
-COPY ../common/000-default.conf /etc/apache2/sites-enabled/000-default.conf
-COPY ../common/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf
-COPY ../common/entrypoint.sh /entrypoint.sh
+COPY common/supervisord.conf /etc/supervisord.conf
+COPY common/foreground.sh /etc/apache2/foreground.sh
+COPY common/envvars /etc/apache2/envvars
+COPY common/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+COPY common/default-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf
+COPY common/entrypoint.sh /entrypoint.sh
 
 # Start supervisor 
 RUN service supervisor restart
