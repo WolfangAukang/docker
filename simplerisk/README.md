@@ -18,10 +18,20 @@ We invite you to visit our website - www.simplerisk.com - and register for a fre
 
 SimpleRisk – Transforming Risk Management. Simple. Effective. Affordable.
 
+## Build
+
+To build this image, run the following commands:
+
+```
+# From the root folder
+cd simplerisk
+podman build -t simplerisk/simplerisk ubuntu-version # Currently supports Trusty and Bionic
+```
+
 ## Run
 
 To run the container in standalone mode, execute the command:
 
 ```
-docker run --name simplerisk -d -p 80:80 -p 443:443 simplerisk
+docker run --name simplerisk -d -p 80:80 -p 443:443 simplerisk/simplerisk
 ```
