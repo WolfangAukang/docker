@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - 'testing'
+  pull_request:
+    branches:
+      - 'testing'
 
 jobs:
   oci-check:
