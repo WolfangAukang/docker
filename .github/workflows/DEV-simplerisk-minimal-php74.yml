@@ -1,10 +1,6 @@
 name: Development Checkup for SimpleRisk Minimal (PHP 7.4) 
 
 on:
-  push:
-    branches-ignore:
-      - 'master'
-      - 'testing'
   pull_request:
     branches:
       - 'testing'
