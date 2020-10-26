@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eo pipefail
+set -exo pipefail
 
 print_log(){
     echo "$(date -u +"[%a %b %e %X.%6N %Y]") [$1] $2"
@@ -21,10 +21,9 @@ fatal_error(){
 
 set_db_password(){
     if [ ! -z "${FIRST_TIME_SETUP:-}" ]; then
-        if [ -z "${SIMPLERISK_DB_PASSWORD:-}" ]; then
-            SIMPLERISK_DB_PASSWORD=$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-21})
-            print_log "initial_setup:warn" "As no password was provided and this is a first time setup, a random password has been generated ($SIMPLERISK_DB_PASSWORD)"
-        fi
+        [ -z "${SIMPLERISK_DB_PASSWORD:-}" ] && SIMPLERISK_DB_PASSWORD=$(cat /dev/urandom | tr -dc _A-Z-a-z-0-9 | head -c 21) && \
+          print_log "initial_setup:warn" "As no password was provided and this is a first time setup, a random password will be generated. Check /var/www/simplerisk/includes/config.php"|| \
+          true
         sed -i "s/\('DB_PASSWORD', '\).*\(');\)/\1$(echo $SIMPLERISK_DB_PASSWORD)\2/g" $CONFIG_PATH
     else
         [ "${SIMPLERISK_DB_PASSWORD:-simplerisk}" != 'simplerisk' ] && sed -i "s/\('DB_PASSWORD', '\).*\(');\)/\1$(echo $SIMPLERISK_DB_PASSWORD)\2/g" $CONFIG_PATH || SIMPLERISK_DB_PASSWORD="simplerisk"
@@ -52,6 +51,12 @@ set_config(){
 }
 
 db_setup(){
+    echo "${SIMPLERISK_DB_HOSTNAME:-none}"
+    echo "${SIMPLERISK_DB_USERNAME:-none}"
+    echo "${SIMPLERISK_DB_PASSWORD:-none}"
+    echo "${SIMPLERISK_DB_DATABASE:-none}"
+    echo "${SIMPLERISK_DB_PORT:-none}"
+    
     print_log "initial_setup:info" "First time setup. Will wait..."
     exec_cmd "sleep ${FIRST_TIME_SETUP_WAIT:-20}s > /dev/null 2>&1" "FIRST_TIME_SETUP_WAIT variable is set incorrectly. Exiting."
 
